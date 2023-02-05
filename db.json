@@ -1,0 +1,61 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "users":[
+    {
+        "email":"john@gmail.com",
+        "username":"johnd",
+        "password":"m38rmF$"
+
+    },
+    {
+        "email":"morrison@gmail.com",
+        "username":"mor_2314",
+        "password":"83r5^_"
+
+    }
+],
+"restaurents":[
+  {
+      "email":"kfc.eats@outlook.com",
+      "username":"KFC",
+      "resort":"Near sector 50"
+
+  },
+  {
+    "email":"dominos.piza@outlook.com",
+    "username":"Dominos Pizza",
+    "resort":"Near sector 63"
+  },
+  {
+    "email":"dominos.piza@outlook.com",
+    "username":"Dominos Pizza",
+    "resort":"Near sector 63"
+
+
+  },
+  {
+    "email":"dominos.piza@outlook.com",
+    "username":"Dominos Pizza",
+    "resort":"Near sector 63"
+
+
+  }
+],
+
+  "profile": {
+    "name": "typicode"
+  }
+}
