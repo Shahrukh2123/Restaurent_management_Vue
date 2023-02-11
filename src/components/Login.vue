@@ -77,7 +77,7 @@ export default{
           } else{
             swal({
   title: "Invalid Credential",
-  "text":"Please try again letter",
+  "text":"Please try again later !!",
   icon: "danger",
   buttons: true,
   dangerMode: true,
