@@ -39,7 +39,7 @@
 
 <script>
 import axios from 'axios'
-
+import swal from 'sweetalert'
 export default{
     
     // eslint-disable-next-line vue/multi-word-component-names
@@ -58,14 +58,12 @@ export default{
       login() {
       var  result = axios
         .get(
-          "https://fakestoreapi.com/users?email=" +
-            this.email +
-            "&password=" +
-            this.password
+          "https://jsonplaceholder.typicode.com/users?email=" +
+            this.email
         )
         .then((response) => {
           if (response.status === 200 && response.data.length > 0) {
-            alert("Login Successfully");
+            swal("Login Successfully", "", "success");
              console.log(result)
             localStorage.setItem(
               "user_info",
@@ -76,6 +74,14 @@ export default{
               })
             );
             this.$router.push({ name: 'Home' });
+          } else{
+            swal({
+  title: "Invalid Credential",
+  "text":"Please try again letter",
+  icon: "danger",
+  buttons: true,
+  dangerMode: true,
+})
           }
         });
     },

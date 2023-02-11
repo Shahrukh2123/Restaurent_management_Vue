@@ -14,7 +14,7 @@
           <li style="text-align:initial"><a style="color:white;"><i class="fa fa-hotel"></i>&nbsp;&nbsp;&nbsp;&nbsp;Update Hotel<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
           <li><a style="color:white;"><i class="fa fa-key"></i>&nbsp;&nbsp;&nbsp;&nbsp;Book Room<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
           <li><a style="color:white;"><i class="fa fa-star"></i>&nbsp;&nbsp;&nbsp;&nbsp;Add Facility<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-          <li><a style="color:white;"><i class="fa fa-sign-out"></i>&nbsp;&nbsp;&nbsp;&nbsp;Log Out<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+          <li><a style="color:white;" v-bind:on-click="logout()"><i class="fa fa-sign-out"></i>&nbsp;&nbsp;&nbsp;&nbsp;Log Out<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
         </ul>
       </div>
           
@@ -32,9 +32,26 @@
 </template>
 
 <script>
+import swal from 'sweetalert';
 export default{
     // eslint-disable-next-line vue/multi-word-component-names
-    name:'Header'
+    name:'Header',
+    methods:{
+      logout(){
+        swal({
+  title: "Are you sure? You want to Logout",
+  icon: "info",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willLogout) => {
+  if (willLogout) {
+    this.$router.push({ name: 'Login' });
+  } 
+});
+        
+      }
+    }
 }
 </script>
 
