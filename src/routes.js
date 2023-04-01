@@ -11,7 +11,7 @@ const routes=[
 {
     name:'Login',
     path:'/login',
-    component:Login,
+    component:Login
 },
 {
     name:'AddHotel',
@@ -28,11 +28,6 @@ const routes=[
     path:'/dashboard',
     // eslint-disable-next-line no-undef
     component:Dashboard,
-},
-{
-    name:'Login',
-    path:'/',
-    component:Login,
 },
 {
     name:'signup',

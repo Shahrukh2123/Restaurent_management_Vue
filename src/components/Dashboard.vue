@@ -53,7 +53,7 @@ Book
        <img class="card-img-top img-thumbnail" src="https://images.unsplash.com/photo-1596386461350-326ccb383e9f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8aG90ZWwlMjBpbnRlcmlvcnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="Card image cap">
        <div class="card-body">
         <h5 class="card-text text-danger">Book Convection Hall </h5>
-        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+      <button type="button" class="btn btn-info"  data-bs-toggle="modal" data-bs-target="#exampleModal1">
 Book
 </button>
         <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
@@ -75,17 +75,17 @@ Book
           </div>
           <div class="mb-3">
             <label for="message-text" class="col-form-label">No of guests</label>
-            <input type="number" placeholder="No of Guests" class="form-control">
+            <input type="text" v-model="guests" placeholder="No of Guests" class="form-control">
           </div>
           <div class="mb-3">
             <label for="message-text" class="col-form-label">Room</label>
-            <input type="string" value="Delux Room" class="form-control" disabled="true">
+            <input type="text"  v-model="room" name="Deluxe Room" class="form-control" disabled="true">
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success">Save changes</button>
+        <button type="button" v:on-click="bookRoom()" class="btn btn-success">Save changes</button>
       </div>
     </div>
   </div>
@@ -171,11 +171,35 @@ Book
      <script>
    import Header from './header.vue'
 import Navbar from './navBar.vue'
+import axios from 'axios'
+import swal from 'sweetalert'
      export default {
        // eslint-disable-next-line vue/multi-word-component-names
        name: 'Dashboard',
        components:{
         Header,Navbar
+       },
+       data(){
+        return{
+           hotel:'',
+           guests:'',
+           room:''
+        }
+       },
+       methods:{
+        bookRoom(){
+           axios.post("https://my-json-server.typicode.com/typicode/demo/posts", {
+          id: this.hotel,
+          title: this.guest,
+        },console.log(this.guests+this.hotel))
+        .then((response) => {
+          if (response.status === 200) {
+            swal("Room Booked ,Thank You!!!", "", "success");
+          }
+        
+        });
+
+        }
        }
      }
      </script>

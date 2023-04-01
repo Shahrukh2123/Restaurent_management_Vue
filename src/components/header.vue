@@ -14,7 +14,7 @@
           <li style="text-align:initial"><a style="color:white;"><i class="fa fa-hotel"></i>&nbsp;&nbsp;&nbsp;&nbsp;Update Hotel<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
           <li><a style="color:white;"><i class="fa fa-key"></i>&nbsp;&nbsp;&nbsp;&nbsp;Book Room<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
           <li><a style="color:white;"><i class="fa fa-star"></i>&nbsp;&nbsp;&nbsp;&nbsp;Add Facility<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-          <li><a style="color:white;" v-bind:on-click="logout()"><i class="fa fa-sign-out"></i>&nbsp;&nbsp;&nbsp;&nbsp;Log Out<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+          <li><a style="color:white;" v:on-click="logout()"><i class="fa fa-sign-out"></i>&nbsp;&nbsp;&nbsp;&nbsp;Log Out<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
         </ul>
       </div>
           
@@ -46,7 +46,7 @@ export default{
 })
 .then((willLogout) => {
   if (willLogout) {
-    this.$router.push({ name: 'Login' });
+    this.$router.push({ name: '' });
   } 
 });
         
@@ -84,8 +84,8 @@ export default{
     float: left;
     width: 150px;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    padding-left: 12px;
+    
 }
 #page-content-wrapper {
     padding-left: 0;
@@ -202,6 +202,9 @@ export default{
     width: 150px;
     transition: all .4s ease 0s;
 }
+}
+a{
+  cursor: pointer;
 }
 
 </style>

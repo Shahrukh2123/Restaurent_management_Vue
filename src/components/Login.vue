@@ -73,7 +73,7 @@ export default{
                 name: response.data.name,
               })
             );
-            this.$router.push({ name: 'Home' });
+            this.$router.push({ name: 'Dashboard' });
           } else{
             swal({
   title: "Invalid Credential",
@@ -105,6 +105,12 @@ a{
     text-decoration: none;
     margin-top: 12px;
     font-weight: 500;
+}
+
+input::placeholder{
+  font-size:15px;
+  font-weight:bold;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 
